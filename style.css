@@ -149,6 +149,16 @@ ul {
   background: var(--pjf-purple-light);
 }
 
+.mobile-menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: var(--pjf-purple);
+  cursor: pointer;
+  padding: 5px;
+}
+
 /* --- Hero Section --- */
 .hero-pulse {
   padding: 100px 0 60px;
@@ -608,4 +618,148 @@ ul {
   justify-content: center;
   font-weight: 800;
   border: 2px solid #fff;
+}
+
+/* --- Responsividade (Mobile & Tablet) --- */
+@media (max-width: 992px) {
+  /* Reduzir hero limits e spaces */
+  .hero-pulse {
+    padding: 60px 0 30px;
+  }
+  
+  /* Ajuste de seções inline no index */
+  section[style*="padding: 80px 40px"] {
+    padding: 50px 20px !important;
+    margin: 50px 0 !important;
+  }
+  
+  section[style*="padding: 80px 60px"] {
+    padding: 50px 20px !important;
+  }
+  
+  div[style*="padding: 80px 60px"] {
+    padding: 50px 30px !important;
+  }
+
+  section[style*="grid-template-columns: 1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column-reverse;
+  }
+  
+  /* O "Lado Direito: A Estrela" precisa de uma altura fixa no mobile */
+  section[style*="grid-template-columns: 1fr 1fr"] > div[style*="min-height: 500px"] {
+    min-height: 350px !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-header {
+    top: 5px;
+  }
+
+  /* Toolbar superior em coluna para mobile */
+  .glass-nav {
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-radius: 20px;
+  }
+  
+  .mobile-menu-btn {
+    display: block;
+    order: 1;
+  }
+  
+  .brand-wrapper {
+    order: 0;
+  }
+
+  .nav-links {
+    display: none;
+    order: 2;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .header-cta {
+    display: none !important; /* using !important just in case inline block overrides */
+    order: 3;
+    width: 100%;
+    justify-content: center !important;
+    margin-top: 15px;
+  }
+
+  .glass-nav.menu-open .nav-links,
+  .glass-nav.menu-open .header-cta {
+    display: flex !important;
+  }
+  
+  .nav-item {
+    font-size: 15px;
+    padding: 12px 15px;
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Titulo do hero deve escalar na responsividade */
+  .hero-pulse h1 {
+    font-size: clamp(2rem, 8vw, 2.8rem) !important;
+  }
+  
+  .hero-pulse p {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+  
+  /* Forçar os cards na grade para uma coluna em telas estreitas */
+  .grid, .news-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  /* Para os filtros/chips para nao quebrarem as telas */
+  .quick-filters {
+    justify-content: flex-start;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 12px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .quick-filters::-webkit-scrollbar {
+    height: 6px;
+  }
+  .quick-filters::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.1);
+    border-radius: 10px;
+  }
+  
+  /* Ajuste no Newsletter de display = flex para bloco */
+  form[style*="display: flex"] {
+    flex-direction: column !important;
+  }
+  
+  form[style*="display: flex"] input, 
+  form[style*="display: flex"] button {
+    width: 100% !important;
+  }
+  
+  /* Footer padding adjust */
+  .app-footer {
+    padding: 50px 0 20px;
+  }
+  
+  /* Modal de agenda responsivo */
+  .modal-content {
+    padding: 25px;
+    width: 90%;
+  }
+
+  .floating-circle {
+    display: none; /* Desativar bolhas gigantes em telas muito curtas se desejarem */
+  }
 }
