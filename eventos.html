@@ -14,7 +14,10 @@
           <div class="logo-icon"><i class="ph-fill ph-lightning"></i></div>
           <span class="brand-text">JFCULTURA</span>
         </a>
-        <button class="mobile-menu-btn" onclick="this.parentElement.classList.toggle('menu-open')">
+        <button
+          class="mobile-menu-btn"
+          onclick="this.parentElement.classList.toggle('menu-open')"
+        >
           <i class="ph ph-list"></i>
         </button>
         <div class="nav-links">
@@ -23,20 +26,56 @@
           <a href="eventos.html" class="nav-item active">Eventos</a>
           <a href="locais.html" class="nav-item">Locais</a>
           <a href="adocao.html" class="nav-item">Adoção</a>
-          <a href="javascript:void(0)" class="nav-item" onclick="toggleCalendar()">Minha Agenda</a>
+          <a
+            href="javascript:void(0)"
+            class="nav-item"
+            onclick="toggleCalendar()"
+            >Minha Agenda</a
+          >
           <div class="header-cta-mobile">
-            <a href="javascript:void(0)" class="btn-primary" style="padding: 10px 25px; font-size: 14px; width: 100%; justify-content: center; background: var(--pjf-purple-light); color: var(--pjf-purple);" onclick="alert('Área do Usuário (Protótipo)')">Meus Eventos</a>
+            <a
+              href="javascript:void(0)"
+              class="btn-primary"
+              style="
+                padding: 10px 25px;
+                font-size: 14px;
+                width: 100%;
+                justify-content: center;
+                background: var(--pjf-purple-light);
+                color: var(--pjf-purple);
+              "
+              onclick="alert('Área do Usuário (Protótipo)')"
+              >Meus Eventos</a
+            >
           </div>
         </div>
-        <div class="header-cta" style="display: flex; align-items: center; gap: 20px;">
-          <div style="position: relative; cursor: pointer;" onclick="toggleCalendar()">
-            <i class="ph ph-bell" style="font-size: 24px; color: var(--pjf-purple);"></i>
-            <span class="badge-count" id="notif-badge" style="display: none;">0</span>
+        <div
+          class="header-cta"
+          style="display: flex; align-items: center; gap: 20px"
+        >
+          <div
+            style="position: relative; cursor: pointer"
+            onclick="toggleCalendar()"
+          >
+            <i
+              class="ph ph-bell"
+              style="font-size: 24px; color: var(--pjf-purple)"
+            ></i>
+            <span class="badge-count" id="notif-badge" style="display: none"
+              >0</span
+            >
           </div>
           <a
             href="javascript:void(0)"
             class="btn-primary"
-            style="padding: 10px 25px; font-size: 14px; box-shadow: none; border-radius: 12px; background: var(--pjf-purple-light); color: var(--pjf-purple);"
+            style="
+              padding: 10px 25px;
+              font-size: 14px;
+              box-shadow: none;
+              border-radius: 12px;
+              background: var(--pjf-purple-light);
+              color: var(--pjf-purple);
+            "
             onclick="alert('Área do Usuário (Protótipo)')"
             >Meus Eventos</a
           >
@@ -45,7 +84,7 @@
     </header>
 
     <main class="container">
-      <section class="hero-pulse" style="padding: 60px 0 30px;">
+      <section class="hero-pulse" style="padding: 60px 0 30px">
         <h1>Explore a <span>Agenda</span></h1>
         <p>Busque por shows, espetáculos ou categorias.</p>
       </section>
@@ -54,12 +93,16 @@
       <div class="search-container animate">
         <div class="search-field">
           <i class="ph ph-magnifying-glass"></i>
-          <input type="text" id="event-search-input" placeholder="O que você quer viver hoje?" />
+          <input
+            type="text"
+            id="event-search-input"
+            placeholder="O que você quer viver hoje?"
+          />
         </div>
       </div>
 
       <!-- Filters -->
-      <div class="quick-filters animate" style="animation-delay: 0.1s;">
+      <div class="quick-filters animate" style="animation-delay: 0.1s">
         <a href="#" class="chip active" data-filter="todos">Todos</a>
         <a href="#" class="chip" data-filter="música">Música</a>
         <a href="#" class="chip" data-filter="teatro">Teatro</a>
@@ -71,19 +114,47 @@
         <!-- Evento 1 -->
         <article class="card animate" data-category="música">
           <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&auto=format&fit=crop" alt="Evento">
+            <img
+              src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=800&auto=format&fit=crop"
+              alt="Evento"
+            />
           </div>
           <div class="card-body">
-            <span style="font-size: 11px; font-weight: 800; color: var(--pjf-green); text-transform: uppercase;">Música</span>
+            <span
+              style="
+                font-size: 11px;
+                font-weight: 800;
+                color: var(--pjf-green);
+                text-transform: uppercase;
+              "
+              >Música</span
+            >
             <h3 class="card-title">Sexta Jazz no Cultural</h3>
             <div class="card-meta">
               <span><i class="ph ph-calendar"></i> Hoje, 21:00</span>
               <span><i class="ph ph-map-pin"></i> Cultural Bar</span>
             </div>
-            <div style="display: flex; gap: 10px;">
-              <a href="#" class="btn-card" style="flex: 1;">Ver Detalhes</a>
-              <button class="btn-card" style="width: 50px; background: var(--pjf-purple-light); color: var(--pjf-purple); display: flex; align-items: center; justify-content: center;" onclick="addToCalendar('Sexta Jazz no Cultural', 'Hoje, 21:00', 'Cultural Bar')">
-                 <i class="ph ph-calendar-plus" style="font-size: 20px;"></i>
+            <div style="display: flex; gap: 10px">
+              <a href="#" class="btn-card" style="flex: 1">Ver Detalhes</a>
+              <button
+                class="btn-card"
+                style="
+                  width: 50px;
+                  background: var(--pjf-purple-light);
+                  color: var(--pjf-purple);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+                onclick="
+                  addToCalendar(
+                    'Sexta Jazz no Cultural',
+                    'Hoje, 21:00',
+                    'Cultural Bar',
+                  )
+                "
+              >
+                <i class="ph ph-calendar-plus" style="font-size: 20px"></i>
               </button>
             </div>
           </div>
@@ -92,19 +163,47 @@
         <!-- Evento 2 -->
         <article class="card animate" data-category="cultura">
           <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format&fit=crop" alt="Evento">
+            <img
+              src="https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=800&auto=format&fit=crop"
+              alt="Evento"
+            />
           </div>
           <div class="card-body">
-            <span style="font-size: 11px; font-weight: 800; color: var(--pjf-purple); text-transform: uppercase;">Cultura</span>
+            <span
+              style="
+                font-size: 11px;
+                font-weight: 800;
+                color: var(--pjf-purple);
+                text-transform: uppercase;
+              "
+              >Cultura</span
+            >
             <h3 class="card-title">Semana do Hip Hop JF</h3>
             <div class="card-meta">
               <span><i class="ph ph-calendar"></i> 12 Jun - 15 Jun</span>
               <span><i class="ph ph-map-pin"></i> Praça Antônio Carlos</span>
             </div>
-            <div style="display: flex; gap: 10px;">
-              <a href="#" class="btn-card" style="flex: 1;">Ver Detalhes</a>
-              <button class="btn-card" style="width: 50px; background: var(--pjf-purple-light); color: var(--pjf-purple); display: flex; align-items: center; justify-content: center;" onclick="addToCalendar('Semana do Hip Hop JF', '12 Jun, 18:00', 'Praça Antônio Carlos')">
-                 <i class="ph ph-calendar-plus" style="font-size: 20px;"></i>
+            <div style="display: flex; gap: 10px">
+              <a href="#" class="btn-card" style="flex: 1">Ver Detalhes</a>
+              <button
+                class="btn-card"
+                style="
+                  width: 50px;
+                  background: var(--pjf-purple-light);
+                  color: var(--pjf-purple);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                "
+                onclick="
+                  addToCalendar(
+                    'Semana do Hip Hop JF',
+                    '12 Jun, 18:00',
+                    'Praça Antônio Carlos',
+                  )
+                "
+              >
+                <i class="ph ph-calendar-plus" style="font-size: 20px"></i>
               </button>
             </div>
           </div>
@@ -113,10 +212,21 @@
         <!-- Evento 3 -->
         <article class="card animate" data-category="teatro">
           <div class="card-media">
-            <img src="https://images.unsplash.com/photo-1543335506-69507f311cfa?w=800&auto=format&fit=crop" alt="Evento">
+            <img
+              src="https://imgs.search.brave.com/pzmNFxuALjF5yJcVezJ2uSok-jMOxOe_R50mcmw0LNo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly90NC5m/dGNkbi5uZXQvanBn/LzAzLzc1LzcwLzIx/LzM2MF9GXzM3NTcw/MjE0OV9tbjZUeE00/RVYzM3BYamFzcHJm/b1pVc01Ra2VJdHhl/Vi5qcGc"
+              alt="Evento"
+            />
           </div>
           <div class="card-body">
-            <span style="font-size: 11px; font-weight: 800; color: var(--pjf-purple); text-transform: uppercase;">Teatro</span>
+            <span
+              style="
+                font-size: 11px;
+                font-weight: 800;
+                color: var(--pjf-purple);
+                text-transform: uppercase;
+              "
+              >Teatro</span
+            >
             <h3 class="card-title">Festival de Cenas Curtas</h3>
             <div class="card-meta">
               <span><i class="ph ph-calendar"></i> 20 Jun</span>
@@ -135,39 +245,112 @@
 
     <!-- Interactive Prototype Components -->
     <div class="push-mock" id="push-notification">
-        <div class="push-icon"><i class="ph-fill ph-bell-ringing"></i></div>
-        <div style="flex: 1;">
-            <p style="font-weight: 800; font-size: 14px; margin-bottom: 2px;" id="push-title">JFCultura</p>
-            <p style="font-size: 12px; opacity: 0.8;" id="push-msg">Prepare-se! Seu evento começa em 1h.</p>
-        </div>
+      <div class="push-icon"><i class="ph-fill ph-bell-ringing"></i></div>
+      <div style="flex: 1">
+        <p
+          style="font-weight: 800; font-size: 14px; margin-bottom: 2px"
+          id="push-title"
+        >
+          JFCultura
+        </p>
+        <p style="font-size: 12px; opacity: 0.8" id="push-msg">
+          Prepare-se! Seu evento começa em 1h.
+        </p>
+      </div>
     </div>
 
     <div class="toast-container" id="toast-container"></div>
 
-    <div class="modal-overlay" id="calendar-modal" onclick="if(event.target == this) toggleCalendar()">
-        <div class="modal-content">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px;">
-                <div>
-                   <h2 style="font-size: 32px; font-weight: 800; color: var(--pjf-purple-dark);">Minha Agenda</h2>
-                   <p style="color: var(--text-muted); font-size: 14px;">Eventos que você salvou em Juiz de Fora.</p>
-                </div>
-                <button onclick="toggleCalendar()" style="background: var(--bg-primary); border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="ph ph-x"></i></button>
-            </div>
-            
-            <div id="calendar-empty" style="text-align: center; padding: 60px 0;">
-                <div style="width: 80px; height: 80px; background: var(--pjf-purple-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
-                   <i class="ph ph-calendar-blank" style="font-size: 32px; color: var(--pjf-purple);"></i>
-                </div>
-                <p style="color: var(--text-muted); font-weight: 600;">Você ainda não salvou eventos.</p>
-                <p style="color: var(--text-muted); font-size: 13px; margin-top: 5px;">Salve eventos para receber notificações.</p>
-            </div>
-
-            <div class="calendar-list" id="user-calendar-list"></div>
-
-            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.05);">
-                <a href="eventos.html" class="btn-primary" style="width: 100%; justify-content: center; padding: 22px;">Descobrir Mais Eventos</a>
-            </div>
+    <div
+      class="modal-overlay"
+      id="calendar-modal"
+      onclick="if (event.target == this) toggleCalendar();"
+    >
+      <div class="modal-content">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+          "
+        >
+          <div>
+            <h2
+              style="
+                font-size: 32px;
+                font-weight: 800;
+                color: var(--pjf-purple-dark);
+              "
+            >
+              Minha Agenda
+            </h2>
+            <p style="color: var(--text-muted); font-size: 14px">
+              Eventos que você salvou em Juiz de Fora.
+            </p>
+          </div>
+          <button
+            onclick="toggleCalendar()"
+            style="
+              background: var(--bg-primary);
+              border: none;
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              font-size: 20px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i class="ph ph-x"></i>
+          </button>
         </div>
+
+        <div id="calendar-empty" style="text-align: center; padding: 60px 0">
+          <div
+            style="
+              width: 80px;
+              height: 80px;
+              background: var(--pjf-purple-light);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 20px;
+            "
+          >
+            <i
+              class="ph ph-calendar-blank"
+              style="font-size: 32px; color: var(--pjf-purple)"
+            ></i>
+          </div>
+          <p style="color: var(--text-muted); font-weight: 600">
+            Você ainda não salvou eventos.
+          </p>
+          <p style="color: var(--text-muted); font-size: 13px; margin-top: 5px">
+            Salve eventos para receber notificações.
+          </p>
+        </div>
+
+        <div class="calendar-list" id="user-calendar-list"></div>
+
+        <div
+          style="
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+          "
+        >
+          <a
+            href="eventos.html"
+            class="btn-primary"
+            style="width: 100%; justify-content: center; padding: 22px"
+            >Descobrir Mais Eventos</a
+          >
+        </div>
+      </div>
     </div>
 
     <script src="script.js"></script>

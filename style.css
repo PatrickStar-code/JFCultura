@@ -160,7 +160,7 @@ ul {
 }
 
 .header-cta-mobile {
-  display: none;
+  display: none !important;
 }
 
 /* --- Hero Section --- */
@@ -721,7 +721,7 @@ ul {
   }
 
   .nav-links .header-cta-mobile {
-    display: flex;
+    display: flex !important;
     width: 100%;
     flex-direction: column;
     gap: 15px;
