@@ -23,7 +23,10 @@
           <a href="eventos.html" class="nav-item active">Eventos</a>
           <a href="locais.html" class="nav-item">Locais</a>
           <a href="adocao.html" class="nav-item">Adoção</a>
-          <a href="#" class="nav-item" onclick="toggleCalendar()">Minha Agenda</a>
+          <a href="javascript:void(0)" class="nav-item" onclick="toggleCalendar()">Minha Agenda</a>
+          <div class="header-cta-mobile">
+            <a href="javascript:void(0)" class="btn-primary" style="padding: 10px 25px; font-size: 14px; width: 100%; justify-content: center; background: var(--pjf-purple-light); color: var(--pjf-purple);" onclick="alert('Área do Usuário (Protótipo)')">Meus Eventos</a>
+          </div>
         </div>
         <div class="header-cta" style="display: flex; align-items: center; gap: 20px;">
           <div style="position: relative; cursor: pointer;" onclick="toggleCalendar()">
@@ -31,7 +34,7 @@
             <span class="badge-count" id="notif-badge" style="display: none;">0</span>
           </div>
           <a
-            href="#"
+            href="javascript:void(0)"
             class="btn-primary"
             style="padding: 10px 25px; font-size: 14px; box-shadow: none; border-radius: 12px; background: var(--pjf-purple-light); color: var(--pjf-purple);"
             onclick="alert('Área do Usuário (Protótipo)')"
