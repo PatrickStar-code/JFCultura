@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Explorar Juiz de Fora | JFCultura</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <header class="app-header container">
+      <nav class="glass-nav">
+        <a href="index.html" class="brand-wrapper">
+          <div class="logo-icon"><i class="ph-fill ph-lightning"></i></div>
+          <span class="brand-text">JFCULTURA</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item">Início</a>
+          <a href="explorar.html" class="nav-item active">Explorar</a>
+          <a href="eventos.html" class="nav-item">Eventos</a>
+          <a href="locais.html" class="nav-item">Locais</a>
+          <a href="adocao.html" class="nav-item">Adoção</a>
+          <a href="#" class="nav-item" onclick="toggleCalendar()">Minha Agenda</a>
+        </div>
+        <div class="header-cta" style="display: flex; align-items: center; gap: 20px;">
+          <div style="position: relative; cursor: pointer;" onclick="toggleCalendar()">
+            <i class="ph ph-bell" style="font-size: 24px; color: var(--pjf-purple);"></i>
+            <span class="badge-count" id="notif-badge" style="display: none;">0</span>
+          </div>
+          <a
+            href="#"
+            class="btn-primary"
+            style="padding: 10px 25px; font-size: 14px; box-shadow: none; border-radius: 12px; background: var(--pjf-purple-light); color: var(--pjf-purple);"
+            onclick="alert('Área do Usuário (Protótipo)')"
+            >Meus Eventos</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero-pulse" style="padding: 60px 0 30px;">
+        <h1>O Pulso da <span>Cidade</span></h1>
+        <p>Notícias, editais e as histórias que movimentam a Princesa de Minas.</p>
+      </section>
+
+      <!-- Categorias de Notícias -->
+      <div class="quick-filters animate">
+        <a href="#" class="chip active" data-news-filter="todos">Todos</a>
+        <a href="#" class="chip" data-news-filter="cidade">Cidade</a>
+        <a href="#" class="chip" data-news-filter="cultura">Cultura</a>
+        <a href="#" class="chip" data-news-filter="eventos">Eventos</a>
+        <a href="#" class="chip" data-news-filter="pets">Pets</a>
+      </div>
+
+      <div class="grid news-grid" id="news-grid">
+        <!-- Notícia 1 -->
+        <article class="card animate" data-news-cat="cidade">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?w=1000&auto=format&fit=crop" alt="Feira">
+          </div>
+          <div class="card-body">
+            <span style="font-size: 11px; font-weight: 800; color: var(--pjf-green); text-transform: uppercase;">Cidade</span>
+            <h3 class="card-title">PJF confirma nova feira de adoção no Parque Lajinha</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+              Evento acontece neste domingo e contará com mais de 40 animais entre cães e gatos.
+            </p>
+            <div class="card-meta">
+              <span><i class="ph ph-calendar"></i> 30 Abr</span>
+              <a href="#" style="margin-left: auto; color: var(--pjf-purple); font-weight: 700;">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Notícia 2 -->
+        <article class="card animate" data-news-cat="cultura" style="animation-delay: 0.1s;">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=1000&auto=format&fit=crop" alt="Teatro">
+          </div>
+          <div class="card-body">
+            <span style="font-size: 11px; font-weight: 800; color: var(--pjf-purple); text-transform: uppercase;">Cultura</span>
+            <h3 class="card-title">Edital para ocupação do Teatro Paschoal abre inscrições</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+              Artistas locais já podem submeter propostas para apresentações e oficinas.
+            </p>
+            <div class="card-meta">
+              <span><i class="ph ph-calendar"></i> 28 Abr</span>
+              <a href="#" style="margin-left: auto; color: var(--pjf-purple); font-weight: 700;">Ler mais</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Notícia 3 -->
+        <article class="card animate" data-news-cat="eventos" style="animation-delay: 0.2s;">
+          <div class="card-media">
+            <img src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?w=1000&auto=format&fit=crop" alt="Gastronomia">
+          </div>
+          <div class="card-body">
+            <span style="font-size: 11px; font-weight: 800; color: var(--pjf-green); text-transform: uppercase;">Eventos</span>
+            <h3 class="card-title">Circuito JF Sabor movimenta o centro da cidade</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+              Mais de 15 mil pessoas passaram pelo evento nos três primeiros dias.
+            </p>
+            <div class="card-meta">
+              <span><i class="ph ph-calendar"></i> 25 Abr</span>
+              <a href="#" style="margin-left: auto; color: var(--pjf-purple); font-weight: 700;">Ler mais</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="app-footer container">
+      <div class="footer-brand">JFCULTURA</div>
+      <p class="copy">&copy; 2026 JFCultura. Conectando a cidade.</p>
+    </footer>
+
+    <!-- Interactive Prototype Components -->
+    <div class="push-mock" id="push-notification">
+        <div class="push-icon"><i class="ph-fill ph-bell-ringing"></i></div>
+        <div style="flex: 1;">
+            <p style="font-weight: 800; font-size: 14px; margin-bottom: 2px;" id="push-title">JFCultura</p>
+            <p style="font-size: 12px; opacity: 0.8;" id="push-msg">Prepare-se! Seu evento começa em 1h.</p>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <div class="modal-overlay" id="calendar-modal" onclick="if(event.target == this) toggleCalendar()">
+        <div class="modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px;">
+                <div>
+                   <h2 style="font-size: 32px; font-weight: 800; color: var(--pjf-purple-dark);">Minha Agenda</h2>
+                   <p style="color: var(--text-muted); font-size: 14px;">Eventos que você salvou em Juiz de Fora.</p>
+                </div>
+                <button onclick="toggleCalendar()" style="background: var(--bg-primary); border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="ph ph-x"></i></button>
+            </div>
+            
+            <div id="calendar-empty" style="text-align: center; padding: 60px 0;">
+                <div style="width: 80px; height: 80px; background: var(--pjf-purple-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                   <i class="ph ph-calendar-blank" style="font-size: 32px; color: var(--pjf-purple);"></i>
+                </div>
+                <p style="color: var(--text-muted); font-weight: 600;">Você ainda não salvou eventos.</p>
+                <p style="color: var(--text-muted); font-size: 13px; margin-top: 5px;">Salve eventos para receber notificações.</p>
+            </div>
+
+            <div class="calendar-list" id="user-calendar-list"></div>
+
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.05);">
+                <a href="eventos.html" class="btn-primary" style="width: 100%; justify-content: center; padding: 22px;">Descobrir Mais Eventos</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

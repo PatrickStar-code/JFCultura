@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morro do Imperador (Cristo) | JFCultura</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detail-hero {
+            height: 450px;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            position: relative;
+            margin-top: 20px;
+            box-shadow: var(--shadow-premium);
+        }
+        .detail-hero img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .detail-grid {
+            display: grid;
+            grid-template-columns: 1.8fr 1fr;
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .info-card {
+            background: #fff;
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-premium);
+            border: 1px solid rgba(0,0,0,0.03);
+            height: fit-content;
+        }
+
+        .map-proxy {
+            height: 220px;
+            background: #edf2f7;
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-dim);
+            margin: 20px 0;
+            border: 2px dashed #cbd5e0;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        .map-proxy:hover {
+            border-color: var(--pjf-green);
+            color: var(--pjf-green);
+            background: #f0fff4;
+        }
+
+        .info-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 15px;
+            color: var(--text-main);
+            font-weight: 600;
+        }
+        .stat-item i {
+            color: var(--pjf-purple);
+            font-size: 20px;
+        }
+
+        @media (max-width: 900px) {
+            .detail-grid { grid-template-columns: 1fr; }
+            .detail-hero { height: 300px; }
+            .info-card { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="app-header">
+        <div class="container">
+            <nav class="glass-nav">
+                <a href="index.html" class="brand-wrapper">
+                    <div class="logo-icon"><i class="ph-fill ph-lightning"></i></div>
+                    <span class="brand-text">JFCULTURA</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html" class="nav-item">Início</a>
+                    <a href="explorar.html" class="nav-item">Explorar</a>
+                    <a href="eventos.html" class="nav-item">Eventos</a>
+                    <a href="locais.html" class="nav-item active">Locais</a>
+                    <a href="adocao.html" class="nav-item">Adoção</a>
+</div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Hero -->
+        <div class="detail-hero">
+            <img src="https://images.unsplash.com/photo-1590736962325-0259f9765239?w=1200&auto=format&fit=crop" alt="Morro do Cristo">
+            <div class="slider-caption" style="background: linear-gradient(transparent, rgba(0,0,0,0.8)); bottom: 0; position: absolute; width: 100%; padding: 40px;">
+                <h1 style="font-size: clamp(32px, 5vw, 48px); font-weight: 800; color: #fff;">Morro do Imperador</h1>
+                <p style="color: rgba(255,255,255,0.9); font-size: 18px;">O mirante mais icônico de Juiz de Fora.</p>
+            </div>
+        </div>
+
+        <div class="detail-grid">
+            <!-- Coluna Principal -->
+            <div class="info-main">
+                <div class="info-card">
+                    <h2 style="color: var(--pjf-purple); margin-bottom: 20px; font-size: 28px;">Fé e Natureza</h2>
+                    <p style="color: var(--text-dim); line-height: 1.8; margin-bottom: 20px;">
+                        Localizado a 923 metros de altitude, o **Morro do Imperador** (conhecido carinhosamente como Morro do Cristo) é o ponto mais alto do perímetro urbano. A subida pela sinuosa estrada oferece vislumbres da vegetação nativa antes de abrir-se na espetacular vista panorâmica do topo.
+                    </p>
+                    <p style="color: var(--text-dim); line-height: 1.8;">
+                        O local abriga o Monumento ao Cristo Redentor, que de braços abertos abençoa a cidade desde 1906. É o lugar preferido dos juiz-foranos para apreciar o pôr do sol, praticar exercícios e registrar os momentos mais bonitos da cidade.
+                    </p>
+
+                    <div style="margin-top: 40px;">
+                        <h3 style="font-size: 20px; margin-bottom: 20px; font-weight: 700;">Destaques do Local</h3>
+                        <div class="quick-filters" style="justify-content: flex-start; gap: 10px;">
+                            <span class="chip"><i class="ph ph-camera"></i> Fotos Criativas</span>
+                            <span class="chip"><i class="ph ph-bicycle"></i> Subida Desafio</span>
+                            <span class="chip"><i class="ph ph-coffee"></i> Mirante Relax</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coluna Lateral -->
+            <aside class="info-sidebar">
+                <div class="info-card">
+                    <h3 style="font-size: 20px; margin-bottom: 20px;">Planeje sua Visita</h3>
+                    
+                    <div class="info-stats">
+                        <div class="stat-item"><i class="ph ph-clock"></i> <span>Acesso Livre 24h</span></div>
+                        <div class="stat-item"><i class="ph ph-map-pin"></i> <span>São Pedro, Juiz de Fora - MG</span></div>
+                        <div class="stat-item"><i class="ph ph-currency-circle-dollar"></i> <span style="color: var(--pjf-green);">Entrada Gratuita</span></div>
+                        <div class="stat-item"><i class="ph ph-car"></i> <span>Estacionamento no local</span></div>
+                    </div>
+
+                    <div class="map-proxy">
+                        <i class="ph ph-map-trifold" style="font-size: 32px; margin-bottom: 10px;"></i>
+                        <span style="font-weight: 600; font-size: 14px;">Explorar no Google Maps</span>
+                    </div>
+
+                    <a href="https://www.google.com/maps" target="_blank" class="btn-pulse" style="display: block; text-align: center; margin-top: 20px; width: 100%;">Traçar Rota</a>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <footer class="modern-footer container">
+        <p style="text-align: center; color: var(--text-dim); font-size: 14px;">&copy; 2026 JFCultura Pulse. Prefeitura de Juiz de Fora.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

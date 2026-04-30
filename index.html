@@ -1,0 +1,863 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>JFCultura | Descubra o Pulso de Juiz de Fora</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <div
+      class="floating-circle"
+      style="
+        width: 500px;
+        height: 500px;
+        background: var(--pjf-purple-light);
+        top: -10%;
+        left: -10%;
+      "
+    ></div>
+    <div
+      class="floating-circle"
+      style="
+        width: 400px;
+        height: 400px;
+        background: var(--pjf-green-light);
+        top: 40%;
+        right: -10%;
+        animation-duration: 25s;
+        animation-direction: alternate-reverse;
+      "
+    ></div>
+
+    <!-- Navbar Consistente -->
+    <header class="app-header container">
+      <nav class="glass-nav">
+        <a href="index.html" class="brand-wrapper">
+          <div class="logo-icon"><i class="ph-fill ph-lightning"></i></div>
+          <span class="brand-text">JFCULTURA</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item active">Início</a>
+          <a href="explorar.html" class="nav-item">Explorar</a>
+          <a href="eventos.html" class="nav-item">Eventos</a>
+          <a href="locais.html" class="nav-item">Locais</a>
+          <a href="adocao.html" class="nav-item">Adoção</a>
+          <a href="#" class="nav-item" onclick="toggleCalendar()">Minha Agenda</a>
+        </div>
+        <div class="header-cta" style="display: flex; align-items: center; gap: 20px;">
+          <div style="position: relative; cursor: pointer;" onclick="toggleCalendar()">
+            <i class="ph ph-bell" style="font-size: 24px; color: var(--pjf-purple);"></i>
+            <span class="badge-count" id="notif-badge" style="display: none;">0</span>
+          </div>
+          <a
+            href="#"
+            class="btn-primary"
+            style="padding: 10px 25px; font-size: 14px; box-shadow: none; border-radius: 12px; background: var(--pjf-purple-light); color: var(--pjf-purple);"
+            onclick="alert('Área do Usuário (Protótipo)')"
+            >Meus Eventos</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <!-- Hero Section -->
+      <section class="hero-pulse" style="position: relative; z-index: 10">
+        <h1
+          class="animate"
+          style="
+            font-size: clamp(3rem, 7vw, 5rem);
+            letter-spacing: -2px;
+            line-height: 1.05;
+          "
+        >
+          Juiz de Fora <span>tá acontecendo.</span> Você vem?
+        </h1>
+        <p
+          class="animate"
+          style="
+            animation-delay: 0.1s;
+            font-size: 22px;
+            max-width: 700px;
+            margin: 0 auto 40px;
+            color: var(--text-muted);
+          "
+        >
+          Eventos, experiências e histórias reais rolando agora, pertinho de
+          você.
+        </p>
+        <div class="animate" style="animation-delay: 0.2s">
+          <a href="eventos.html" class="btn-primary btn-cta-ultra">
+            Ver o que tá rolando agora <i class="ph-bold ph-arrow-right"></i>
+          </a>
+        </div>
+      </section>
+
+      <!-- Destaques -->
+      <section style="margin-bottom: 80px">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+          "
+        >
+          <h2
+            style="
+              font-weight: 800;
+              font-size: 32px;
+              display: flex;
+              align-items: center;
+              gap: 12px;
+            "
+          >
+            <span style="font-size: 36px">🔥</span> Ao vivo agora
+          </h2>
+          <a
+            href="eventos.html"
+            style="
+              color: var(--pjf-purple);
+              font-weight: 700;
+              display: flex;
+              align-items: center;
+              gap: 5px;
+              font-size: 16px;
+            "
+            >Ver agenda completa <i class="ph ph-arrow-right"></i
+          ></a>
+        </div>
+        <div class="grid">
+          <!-- Card 1 -->
+          <article class="card animate">
+            <div class="card-media">
+              <span
+                class="card-badge pulse-badge"
+                style="background: var(--pjf-green)"
+                >Ao Vivo</span
+              >
+              <img
+                src="https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=800&auto=format&fit=crop"
+                alt="Evento"
+              />
+            </div>
+            <div class="card-body">
+              <span
+                style="
+                  font-size: 11px;
+                  font-weight: 800;
+                  color: var(--pjf-green);
+                  text-transform: uppercase;
+                "
+                >Música</span
+              >
+              <h3 class="card-title">Sexta Jazz no Cultural</h3>
+              <div class="card-meta">
+                <span><i class="ph ph-calendar"></i> Hoje, 21:00</span>
+                <span><i class="ph ph-map-pin"></i> Mariano Procópio</span>
+              </div>
+              <div style="display: flex; gap: 10px">
+                <a href="eventos.html" class="btn-card" style="flex: 1"
+                  >Ver Detalhes</a
+                >
+                <button
+                  class="btn-card"
+                  style="
+                    width: 50px;
+                    background: var(--pjf-purple-light);
+                    color: var(--pjf-purple);
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                  "
+                  onclick="
+                    addToCalendar(
+                      'Sexta Jazz no Cultural',
+                      'Hoje, 21:00',
+                      'Cultural Bar',
+                    )
+                  "
+                >
+                  <i class="ph ph-calendar-plus" style="font-size: 20px"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+          <!-- Card 2 -->
+          <article class="card animate" style="animation-delay: 0.2s">
+            <div class="card-media">
+              <img
+                src="https://images.unsplash.com/photo-1524368535928-5b5e00ddc76b?w=800&auto=format&fit=crop"
+                alt="Evento"
+              />
+            </div>
+            <div class="card-body">
+              <span
+                style="
+                  font-size: 11px;
+                  font-weight: 800;
+                  color: var(--pjf-purple);
+                  text-transform: uppercase;
+                "
+                >Teatro</span
+              >
+              <h3 class="card-title">Festival de Cenas Curtas</h3>
+              <div class="card-meta">
+                <span><i class="ph ph-calendar"></i> Amanhã, 19:00</span>
+                <span><i class="ph ph-map-pin"></i> Teatro Paschoal</span>
+              </div>
+              <a href="eventos.html" class="btn-card">Ver Detalhes</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Categorias Rápidas -->
+      <section style="margin: 80px 0">
+        <div style="text-align: center; margin-bottom: 40px">
+          <h2
+            style="
+              font-size: 32px;
+              font-weight: 800;
+              color: var(--pjf-purple-dark);
+            "
+          >
+            Explore por Categoria
+          </h2>
+          <p style="color: var(--text-muted)">
+            Encontre exatamente o que você procura na cidade.
+          </p>
+        </div>
+        <div
+          style="
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+          "
+        >
+          <!-- Cat 1 -->
+          <a
+            href="eventos.html?cat=musica"
+            class="card animate"
+            style="
+              padding: 30px;
+              text-align: center;
+              border-radius: var(--radius-md);
+              background: #fff;
+            "
+          >
+            <i
+              class="ph ph-music-notes"
+              style="
+                font-size: 40px;
+                color: var(--pjf-purple);
+                margin-bottom: 15px;
+                display: block;
+              "
+            ></i>
+            <span style="font-weight: 700">Música</span>
+          </a>
+          <!-- Cat 2 -->
+          <a
+            href="eventos.html?cat=teatro"
+            class="card animate"
+            style="
+              padding: 30px;
+              text-align: center;
+              border-radius: var(--radius-md);
+              background: #fff;
+              animation-delay: 0.1s;
+            "
+          >
+            <i
+              class="ph ph-mask-happy"
+              style="
+                font-size: 40px;
+                color: var(--pjf-purple);
+                margin-bottom: 15px;
+                display: block;
+              "
+            ></i>
+            <span style="font-weight: 700">Teatro</span>
+          </a>
+          <!-- Cat 3 -->
+          <a
+            href="locais.html?cat=museus"
+            class="card animate"
+            style="
+              padding: 30px;
+              text-align: center;
+              border-radius: var(--radius-md);
+              background: #fff;
+              animation-delay: 0.2s;
+            "
+          >
+            <i
+              class="ph ph-bank"
+              style="
+                font-size: 40px;
+                color: var(--pjf-purple);
+                margin-bottom: 15px;
+                display: block;
+              "
+            ></i>
+            <span style="font-weight: 700">Museus</span>
+          </a>
+          <!-- Cat 4 -->
+          <a
+            href="locais.html?cat=parques"
+            class="card animate"
+            style="
+              padding: 30px;
+              text-align: center;
+              border-radius: var(--radius-md);
+              background: #fff;
+              animation-delay: 0.3s;
+            "
+          >
+            <i
+              class="ph ph-tree"
+              style="
+                font-size: 40px;
+                color: var(--pjf-purple);
+                margin-bottom: 15px;
+                display: block;
+              "
+            ></i>
+            <span style="font-weight: 700">Parques</span>
+          </a>
+          <!-- Cat 5 -->
+          <a
+            href="explorar.html?cat=pets"
+            class="card animate"
+            style="
+              padding: 30px;
+              text-align: center;
+              border-radius: var(--radius-md);
+              background: #fff;
+              animation-delay: 0.4s;
+            "
+          >
+            <i
+              class="ph ph-dog"
+              style="
+                font-size: 40px;
+                color: var(--pjf-purple);
+                margin-bottom: 15px;
+                display: block;
+              "
+            ></i>
+            <span style="font-weight: 700">Pets</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- Por que explorar JF? + Stats -->
+      <section
+        style="
+          background: var(--bg-white);
+          border-radius: var(--radius-xl);
+          padding: 80px 40px;
+          margin: 80px 0;
+          border: 1px solid rgba(0, 0, 0, 0.03);
+        "
+      >
+        <div
+          style="display: flex; flex-wrap: wrap; gap: 60px; align-items: center"
+        >
+          <div style="flex: 1; min-width: 300px">
+            <h2
+              style="
+                font-size: 42px;
+                font-weight: 800;
+                color: var(--pjf-purple-dark);
+                line-height: 1.1;
+                margin-bottom: 25px;
+              "
+            >
+              A Princesa de Minas na palma da sua mão.
+            </h2>
+            <p
+              style="
+                font-size: 18px;
+                color: var(--text-muted);
+                margin-bottom: 40px;
+              "
+            >
+              Juiz de Fora é um polo cultural e tecnológico em constante
+              movimento. O JFCultura conecta você a tudo o que importa.
+            </p>
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 30px"
+            >
+              <div>
+                <h4
+                  style="
+                    font-size: 32px;
+                    font-weight: 800;
+                    color: var(--pjf-green);
+                  "
+                >
+                  +50
+                </h4>
+                <p
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--text-muted);
+                  "
+                >
+                  Eventos este mês
+                </p>
+              </div>
+              <div>
+                <h4
+                  style="
+                    font-size: 32px;
+                    font-weight: 800;
+                    color: var(--pjf-green);
+                  "
+                >
+                  12
+                </h4>
+                <p
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--text-muted);
+                  "
+                >
+                  Espaços culturais
+                </p>
+              </div>
+              <div>
+                <h4
+                  style="
+                    font-size: 32px;
+                    font-weight: 800;
+                    color: var(--pjf-green);
+                  "
+                >
+                  25k
+                </h4>
+                <p
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--text-muted);
+                  "
+                >
+                  Usuários ativos
+                </p>
+              </div>
+              <div>
+                <h4
+                  style="
+                    font-size: 32px;
+                    font-weight: 800;
+                    color: var(--pjf-green);
+                  "
+                >
+                  100+
+                </h4>
+                <p
+                  style="
+                    font-size: 14px;
+                    font-weight: 600;
+                    color: var(--text-muted);
+                  "
+                >
+                  Pets adotados
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            style="
+              flex: 1;
+              min-width: 300px;
+              display: flex;
+              justify-content: flex-end;
+              position: relative;
+            "
+          >
+            <div
+              style="
+                width: 100%;
+                height: 450px;
+                border-radius: var(--radius-lg);
+                overflow: hidden;
+                box-shadow: var(--shadow-lg);
+              "
+            >
+              <img
+                src="https://images.unsplash.com/photo-1590736962325-0259f9765239?w=1000&auto=format&fit=crop"
+                style="width: 100%; height: 100%; object-fit: cover"
+                alt="Juiz de Fora"
+              />
+            </div>
+            <!-- Overlay floating element -->
+            <div
+              style="
+                position: absolute;
+                bottom: 30px;
+                left: -30px;
+                background: #fff;
+                padding: 25px;
+                border-radius: var(--radius-md);
+                box-shadow: var(--shadow-lg);
+                max-width: 200px;
+              "
+            >
+              <p style="font-weight: 800; font-size: 14px; margin-bottom: 5px">
+                📍 Cine-Theatro Central
+              </p>
+              <p style="font-size: 12px; color: var(--text-muted)">
+                Uma joia da arquitetura no coração de JF.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Adoção Animal: O Poder do Encontro -->
+      <section
+        class="animate"
+        style="
+          margin: 100px 0;
+          background: linear-gradient(
+            135deg,
+            var(--pjf-purple-light) 0%,
+            #fff 100%
+          );
+          border-radius: var(--radius-xl);
+          overflow: hidden;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          border: 1px solid rgba(106, 44, 145, 0.1);
+          box-shadow: var(--shadow-lg);
+        "
+      >
+        <!-- Lado Esquerdo: Conteúdo -->
+        <div
+          style="
+            padding: 80px 60px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+          "
+        >
+          <div
+            style="
+              background: var(--pjf-green-light);
+              color: var(--pjf-green-dark);
+              padding: 8px 15px;
+              border-radius: 50px;
+              display: inline-block;
+              width: max-content;
+              font-size: 12px;
+              font-weight: 800;
+              text-transform: uppercase;
+              letter-spacing: 1px;
+              margin-bottom: 25px;
+            "
+          >
+            Causa Animal JF 🐾
+          </div>
+          <h2
+            style="
+              font-size: 48px;
+              font-weight: 800;
+              color: var(--pjf-purple-dark);
+              line-height: 1;
+              margin-bottom: 20px;
+            "
+          >
+            Esse olhar pode <br /><span style="color: var(--pjf-purple)"
+              >ser para você.</span
+            >
+          </h2>
+          <p
+            style="
+              font-size: 18px;
+              color: var(--text-muted);
+              margin-bottom: 40px;
+              max-width: 400px;
+              line-height: 1.6;
+            "
+          >
+            Seu próximo melhor amigo está em um de nossos abrigos parceiros,
+            esperando por um gesto de carinho. Vamos mudar uma vida hoje?
+          </p>
+          <div style="display: flex; gap: 20px; align-items: center">
+            <a
+              href="adocao.html"
+              class="btn-primary"
+              style="
+                background: var(--pjf-purple);
+                box-shadow: 0 20px 40px rgba(106, 44, 145, 0.2);
+              "
+            >
+              Conhecer os Pets
+            </a>
+            <div style="display: flex; align-items: center; gap: 10px">
+              <div style="display: flex">
+                <img
+                  src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?w=100&auto=format&fit=crop"
+                  style="
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    border: 2px solid #fff;
+                    margin-left: -5px;
+                  "
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?w=100&auto=format&fit=crop"
+                  style="
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    border: 2px solid #fff;
+                    margin-left: -10px;
+                  "
+                />
+                <img
+                  src="https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?w=100&auto=format&fit=crop"
+                  style="
+                    width: 35px;
+                    height: 35px;
+                    border-radius: 50%;
+                    border: 2px solid #fff;
+                    margin-left: -10px;
+                  "
+                />
+              </div>
+              <span
+                style="
+                  font-size: 12px;
+                  font-weight: 700;
+                  color: var(--text-muted);
+                "
+                >+12 amigos esperando</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Lado Direito: A Estrela -->
+        <div style="position: relative; overflow: hidden; min-height: 500px">
+          <img
+            src="https://images.unsplash.com/photo-1537151608828-ea2b11777ee8?w=1000&auto=format&fit=crop"
+            style="
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              transition: transform 0.8s;
+            "
+            onmouseover="this.style.transform = 'scale(1.05)'"
+            onmouseout="this.style.transform = 'scale(1)'"
+          />
+
+          <!-- Quote -->
+          <div
+            style="
+              position: absolute;
+              top: 40px;
+              left: 40px;
+              background: rgba(10, 10, 10, 0.6);
+              backdrop-filter: blur(10px);
+              color: #fff;
+              padding: 15px 25px;
+              border-radius: 100px;
+              font-size: 13px;
+              font-weight: 700;
+            "
+          >
+            "Um cão não precisa de luxo, apenas de amor."
+          </div>
+        </div>
+      </section>
+      <!-- Newsletter / CTA Final -->
+      <section
+        style="
+          background: var(--pjf-purple-dark);
+          padding: 80px 40px;
+          border-radius: var(--radius-xl);
+          text-align: center;
+          color: #fff;
+          margin: 100px 0;
+        "
+      >
+        <h2 style="font-size: 38px; font-weight: 800; margin-bottom: 15px">
+          Não perca nada do que rola em JF.
+        </h2>
+        <p
+          style="
+            font-size: 18px;
+            opacity: 0.8;
+            max-width: 600px;
+            margin: 0 auto 40px;
+          "
+        >
+          Assine nossa newsletter semanal e receba os melhores eventos e
+          notícias diretamente no seu email.
+        </p>
+        <form
+          style="
+            display: flex;
+            gap: 10px;
+            max-width: 500px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+          "
+        >
+          <input
+            type="email"
+            placeholder="Seu melhor e-mail"
+            style="
+              flex: 1;
+              min-width: 250px;
+              padding: 18px 25px;
+              border-radius: 50px;
+              border: none;
+              outline: none;
+              font-family: inherit;
+              font-size: 16px;
+            "
+          />
+          <button
+            type="submit"
+            class="btn-primary"
+            style="
+              background: var(--pjf-green);
+              box-shadow: none;
+              padding: 18px 30px;
+            "
+          >
+            Assinar Agora
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <footer class="app-footer container">
+      <div class="footer-brand">JFCULTURA</div>
+      <p class="copy">&copy; 2026 JFCultura. O pulso urbano de Juiz de Fora.</p>
+    </footer>
+
+    <!-- Interactive Prototype Components -->
+    <div class="push-mock" id="push-notification">
+      <div class="push-icon"><i class="ph-fill ph-bell-ringing"></i></div>
+      <div style="flex: 1">
+        <p
+          style="font-weight: 800; font-size: 14px; margin-bottom: 2px"
+          id="push-title"
+        >
+          JFCultura
+        </p>
+        <p style="font-size: 12px; opacity: 0.8" id="push-msg">
+          Prepare-se! Seu evento começa em 1h.
+        </p>
+      </div>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <div
+      class="modal-overlay"
+      id="calendar-modal"
+      onclick="if (event.target == this) toggleCalendar();"
+    >
+      <div class="modal-content">
+        <div
+          style="
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 35px;
+          "
+        >
+          <div>
+            <h2
+              style="
+                font-size: 32px;
+                font-weight: 800;
+                color: var(--pjf-purple-dark);
+              "
+            >
+              Minha Agenda
+            </h2>
+            <p style="color: var(--text-muted); font-size: 14px">
+              Eventos que você salvou em Juiz de Fora.
+            </p>
+          </div>
+          <button
+            onclick="toggleCalendar()"
+            style="
+              background: var(--bg-primary);
+              border: none;
+              width: 45px;
+              height: 45px;
+              border-radius: 50%;
+              font-size: 20px;
+              cursor: pointer;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+            "
+          >
+            <i class="ph ph-x"></i>
+          </button>
+        </div>
+
+        <div id="calendar-empty" style="text-align: center; padding: 60px 0">
+          <div
+            style="
+              width: 80px;
+              height: 80px;
+              background: var(--pjf-purple-light);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              margin: 0 auto 20px;
+            "
+          >
+            <i
+              class="ph ph-calendar-blank"
+              style="font-size: 32px; color: var(--pjf-purple)"
+            ></i>
+          </div>
+          <p style="color: var(--text-muted); font-weight: 600">
+            Você ainda não salvou eventos.
+          </p>
+          <p style="color: var(--text-muted); font-size: 13px; margin-top: 5px">
+            Salve eventos para receber notificações.
+          </p>
+        </div>
+
+        <div class="calendar-list" id="user-calendar-list"></div>
+
+        <div
+          style="
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+          "
+        >
+          <a
+            href="eventos.html"
+            class="btn-primary"
+            style="width: 100%; justify-content: center; padding: 22px"
+            >Descobrir Mais Eventos</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

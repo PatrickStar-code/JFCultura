@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pontos de Pulsação | JFCultura</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  </head>
+  <body>
+    <header class="app-header container">
+      <nav class="glass-nav">
+        <a href="index.html" class="brand-wrapper">
+          <div class="logo-icon"><i class="ph-fill ph-lightning"></i></div>
+          <span class="brand-text">JFCULTURA</span>
+        </a>
+        <div class="nav-links">
+          <a href="index.html" class="nav-item">Início</a>
+          <a href="explorar.html" class="nav-item">Explorar</a>
+          <a href="eventos.html" class="nav-item">Eventos</a>
+          <a href="locais.html" class="nav-item active">Locais</a>
+          <a href="adocao.html" class="nav-item">Adoção</a>
+          <a href="#" class="nav-item" onclick="toggleCalendar()">Minha Agenda</a>
+        </div>
+        <div class="header-cta" style="display: flex; align-items: center; gap: 20px;">
+          <div style="position: relative; cursor: pointer;" onclick="toggleCalendar()">
+            <i class="ph ph-bell" style="font-size: 24px; color: var(--pjf-purple);"></i>
+            <span class="badge-count" id="notif-badge" style="display: none;">0</span>
+          </div>
+          <a
+            href="#"
+            class="btn-primary"
+            style="padding: 10px 25px; font-size: 14px; box-shadow: none; border-radius: 12px; background: var(--pjf-purple-light); color: var(--pjf-purple);"
+            onclick="alert('Área do Usuário (Protótipo)')"
+            >Meus Eventos</a
+          >
+        </div>
+      </nav>
+    </header>
+
+    <main class="container">
+      <section class="hero-pulse" style="padding: 60px 0 30px;">
+        <h1>Onde a Cidade <span>Acontece</span></h1>
+        <p>Patrimônios, parques e janelas para a história de Juiz de Fora.</p>
+      </section>
+
+      <div class="grid">
+        <!-- Morro do Cristo -->
+        <article class="card animate">
+          <div class="card-media">
+            <span class="card-badge" style="background: var(--pjf-purple);">Turismo</span>
+            <img src="https://images.unsplash.com/photo-1590736962325-0259f9765239?w=800&auto=format&fit=crop" alt="Local">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Morro do Imperador</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+                Fé e vista panorâmica no ponto mais alto de Juiz de Fora.
+            </p>
+            <a href="morro-do-cristo.html" class="btn-card">Explorar Local</a>
+          </div>
+        </article>
+
+        <!-- Lajinha -->
+        <article class="card animate" style="animation-delay: 0.1s;">
+          <div class="card-media">
+            <span class="card-badge" style="background: var(--pjf-green);">Natureza</span>
+            <img src="https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&auto=format&fit=crop" alt="Local">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Parque da Lajinha</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+                Um pulmão verde para trilhas, picnics e contato com a fauna local.
+            </p>
+            <a href="#" class="btn-card">Explorar Local</a>
+          </div>
+        </article>
+
+        <!-- Mariano Procopio -->
+        <article class="card animate" style="animation-delay: 0.2s;">
+          <div class="card-media">
+            <span class="card-badge" style="background: var(--pjf-purple);">Cultura</span>
+            <img src="https://images.unsplash.com/photo-1543335506-69507f311cfa?w=800&auto=format&fit=crop" alt="Local">
+          </div>
+          <div class="card-body">
+            <h3 class="card-title">Museu Mariano Procópio</h3>
+            <p style="font-size: 14px; color: var(--text-muted); margin-bottom: 20px;">
+                O primeiro museu de Minas Gerais, com acervo imperial inestimável.
+            </p>
+            <a href="#" class="btn-card">Explorar Local</a>
+          </div>
+        </article>
+      </div>
+    </main>
+
+    <footer class="app-footer container">
+      <div class="footer-brand">JFCULTURA</div>
+      <p class="copy">&copy; 2026 JFCultura. Patrimônio Vivo.</p>
+    </footer>
+
+    <!-- Interactive Prototype Components -->
+    <div class="push-mock" id="push-notification">
+        <div class="push-icon"><i class="ph-fill ph-bell-ringing"></i></div>
+        <div style="flex: 1;">
+            <p style="font-weight: 800; font-size: 14px; margin-bottom: 2px;" id="push-title">JFCultura</p>
+            <p style="font-size: 12px; opacity: 0.8;" id="push-msg">Prepare-se! Seu evento começa em 1h.</p>
+        </div>
+    </div>
+
+    <div class="toast-container" id="toast-container"></div>
+
+    <div class="modal-overlay" id="calendar-modal" onclick="if(event.target == this) toggleCalendar()">
+        <div class="modal-content">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px;">
+                <div>
+                   <h2 style="font-size: 32px; font-weight: 800; color: var(--pjf-purple-dark);">Minha Agenda</h2>
+                   <p style="color: var(--text-muted); font-size: 14px;">Eventos que você salvou em Juiz de Fora.</p>
+                </div>
+                <button onclick="toggleCalendar()" style="background: var(--bg-primary); border: none; width: 45px; height: 45px; border-radius: 50%; font-size: 20px; cursor: pointer; display: flex; align-items: center; justify-content: center;"><i class="ph ph-x"></i></button>
+            </div>
+            
+            <div id="calendar-empty" style="text-align: center; padding: 60px 0;">
+                <div style="width: 80px; height: 80px; background: var(--pjf-purple-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                   <i class="ph ph-calendar-blank" style="font-size: 32px; color: var(--pjf-purple);"></i>
+                </div>
+                <p style="color: var(--text-muted); font-weight: 600;">Você ainda não salvou eventos.</p>
+                <p style="color: var(--text-muted); font-size: 13px; margin-top: 5px;">Salve eventos para receber notificações.</p>
+            </div>
+
+            <div class="calendar-list" id="user-calendar-list"></div>
+
+            <div style="margin-top: 40px; padding-top: 30px; border-top: 1px solid rgba(0,0,0,0.05);">
+                <a href="eventos.html" class="btn-primary" style="width: 100%; justify-content: center; padding: 22px;">Descobrir Mais Eventos</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
